@@ -11,17 +11,24 @@
         public static int SumOfTwo(int[] nums, int SumToFind)
         {
             int count = 0;
-            Dictionary<int, int> map = new Dictionary<int, int>();
+            Dictionary<int, bool> map = new Dictionary<int, bool>();
             for(int i = 0; i< nums.Length; i++)
             {
                 int complementary = SumToFind - nums[i];
-                if( map.ContainsValue(complementary))
+                if( map.ContainsKey(complementary))
                 {
-                    count++;
+                    if(!map[complementary])
+                    {
+                        map[complementary] = true;
+                        count++;
+                    }
                 }
                 else
                 {
-                    map.Add(i, nums[i]);
+                    if (!map.ContainsKey(nums[i]))
+                    {
+                        map.Add(nums[i], false);
+                    }
                 }
             }
             return count;
