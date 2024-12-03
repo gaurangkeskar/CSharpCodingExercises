@@ -1,0 +1,1 @@
+﻿This example demonstrates the use of the `Any()` method from LINQ in C#.

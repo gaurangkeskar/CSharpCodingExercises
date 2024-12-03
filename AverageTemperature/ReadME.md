@@ -1,0 +1,1 @@
+﻿This C# example demonstrates how to calculate the average temperature from an array of temperature values.
